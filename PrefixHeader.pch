@@ -1,0 +1,14 @@
+//
+//  PrefixHeader.pch
+//  微信聊天
+//
+//  Created by Edge on 2017/6/21.
+//  Copyright © 2017年 Edge. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+#import <UIKit/UIKit.h>
+#import "XMPPFramework.h"
+#import "managerStream.h"
+#endif /* PrefixHeader_pch */
