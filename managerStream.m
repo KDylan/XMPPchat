@@ -20,6 +20,7 @@
 #import "XMPPLogging.h"
 #import "DDTTYLogger.h"
 
+
 @interface managerStream()<XMPPStreamDelegate,XMPPRosterDelegate>
 // 密码
 @property(nonatomic,strong)NSString *passward;
@@ -98,6 +99,15 @@ static managerStream *share;
     return _XMPPRoster;
 
 }
+//  好友消息模块
+-(XMPPMessageArchiving *)XMPPMessageArchiving{
+    if (!_XMPPMessageArchiving) {
+        _XMPPMessageArchiving = [[XMPPMessageArchiving alloc]initWithMessageArchivingStorage:[XMPPMessageArchivingCoreDataStorage sharedInstance] dispatchQueue:dispatch_get_main_queue()];
+        //  设置参数代理
+        
+    }
+    return _XMPPMessageArchiving;
+}
 #pragma mark 自定义方法
 //  登录连接服务器(需要设置myjid和密码才可以登录)
 -(void)logininToservers:(XMPPJID *)XMPPJID passward:(NSString *)passward{
@@ -120,7 +130,8 @@ static managerStream *share;
     [self.XMPPAutoPing activate:self.XMPPStream];
 //  3、激活好友列表
     [self.XMPPRoster activate:self.XMPPStream];
-
+//  4、激活消息模块
+    [self.XMPPMessageArchiving activate:self.XMPPStream];
 }
 
 

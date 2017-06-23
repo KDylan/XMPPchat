@@ -41,8 +41,10 @@
 //4.消息记录
 #import "XMPPMessageArchiving.h"
 #import "XMPPMessageArchivingCoreDataStorage.h"
+//  消息实体
 #import "XMPPMessageArchiving_Message_CoreDataObject.h"
-
+//  最近联系人实体
+#import "XMPPMessageArchiving_Contact_CoreDataObject.h"
 //5.文件接收
 //#import "XMPPIncomingFileTransfer.h"
 

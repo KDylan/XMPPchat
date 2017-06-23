@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7E14EA6F1EFBD5E00066DFEA /* TableContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E14EA6E1EFBD5E00066DFEA /* TableContactViewController.m */; };
+		7E14EA721EFCEFF10066DFEA /* chatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E14EA711EFCEFF10066DFEA /* chatViewController.m */; };
+		7E14EA751EFD46030066DFEA /* RecrntyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E14EA741EFD46030066DFEA /* RecrntyTableViewController.m */; };
 		7EA8D0901EFAA29E00BCD1D4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA8D08F1EFAA29E00BCD1D4 /* main.m */; };
 		7EA8D0931EFAA29E00BCD1D4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA8D0921EFAA29E00BCD1D4 /* AppDelegate.m */; };
 		7EA8D0961EFAA29E00BCD1D4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA8D0951EFAA29E00BCD1D4 /* ViewController.m */; };
@@ -184,6 +186,10 @@
 /* Begin PBXFileReference section */
 		7E14EA6D1EFBD5E00066DFEA /* TableContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableContactViewController.h; sourceTree = "<group>"; };
 		7E14EA6E1EFBD5E00066DFEA /* TableContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableContactViewController.m; sourceTree = "<group>"; };
+		7E14EA701EFCEFF10066DFEA /* chatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chatViewController.h; sourceTree = "<group>"; };
+		7E14EA711EFCEFF10066DFEA /* chatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = chatViewController.m; sourceTree = "<group>"; };
+		7E14EA731EFD46030066DFEA /* RecrntyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecrntyTableViewController.h; sourceTree = "<group>"; };
+		7E14EA741EFD46030066DFEA /* RecrntyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecrntyTableViewController.m; sourceTree = "<group>"; };
 		7EA8D08B1EFAA29E00BCD1D4 /* 微信聊天.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "微信聊天.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EA8D08F1EFAA29E00BCD1D4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7EA8D0911EFAA29E00BCD1D4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -564,6 +570,10 @@
 				7EA8D0951EFAA29E00BCD1D4 /* ViewController.m */,
 				7E14EA6D1EFBD5E00066DFEA /* TableContactViewController.h */,
 				7E14EA6E1EFBD5E00066DFEA /* TableContactViewController.m */,
+				7E14EA701EFCEFF10066DFEA /* chatViewController.h */,
+				7E14EA711EFCEFF10066DFEA /* chatViewController.m */,
+				7E14EA731EFD46030066DFEA /* RecrntyTableViewController.h */,
+				7E14EA741EFD46030066DFEA /* RecrntyTableViewController.m */,
 				7EA8D0971EFAA29E00BCD1D4 /* Main.storyboard */,
 				7EA8D09A1EFAA29E00BCD1D4 /* Assets.xcassets */,
 				7EA8D09C1EFAA29E00BCD1D4 /* LaunchScreen.storyboard */,
@@ -2174,6 +2184,7 @@
 				7EA8D28D1EFAA30700BCD1D4 /* XMPPRosterCoreDataStorage.m in Sources */,
 				7EA8D2EF1EFAA30700BCD1D4 /* DDLog.m in Sources */,
 				7EA8D2EB1EFAA30700BCD1D4 /* GCDAsyncSocket.m in Sources */,
+				7E14EA721EFCEFF10066DFEA /* chatViewController.m in Sources */,
 				7EA8D2CA1EFAA30700BCD1D4 /* XMPPMessageArchiving_Message_CoreDataObject.m in Sources */,
 				7EA8D2711EFAA30700BCD1D4 /* XMPPDigestMD5Authentication.m in Sources */,
 				7EA8D2A21EFAA30700BCD1D4 /* XMPPRoomMemoryStorage.m in Sources */,
@@ -2202,6 +2213,7 @@
 				7EA8D2761EFAA30700BCD1D4 /* NSData+XMPP.m in Sources */,
 				7EA8D2CF1EFAA30700BCD1D4 /* XMPPPresence+XEP_0172.m in Sources */,
 				7EA8D2C41EFAA30700BCD1D4 /* XMPPCapabilitiesCoreDataStorage.m in Sources */,
+				7E14EA751EFD46030066DFEA /* RecrntyTableViewController.m in Sources */,
 				7EA8D27F1EFAA30700BCD1D4 /* XMPPParser.m in Sources */,
 				7EA8D2A41EFAA30700BCD1D4 /* XMPPRoomOccupantMemoryStorageObject.m in Sources */,
 				7EA8D29B1EFAA30700BCD1D4 /* XMPPRoomCoreDataStorage.m in Sources */,

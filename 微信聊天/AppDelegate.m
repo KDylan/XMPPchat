@@ -26,6 +26,8 @@
     UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge categories:nil];
     //  注册
     [[UIApplication sharedApplication]registerUserNotificationSettings:settings];
+  
+    
     
     return YES;
 }

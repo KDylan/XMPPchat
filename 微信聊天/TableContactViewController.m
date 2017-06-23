@@ -7,7 +7,7 @@
 //
 
 #import "TableContactViewController.h"
-
+#import "chatViewController.h"
 @interface TableContactViewController ()<NSFetchedResultsControllerDelegate,XMPPRosterDelegate>
 //查询控制器
 @property(nonatomic,strong)NSFetchedResultsController *fetchResualtController;
@@ -64,6 +64,9 @@
     self.contractArr = self.fetchResualtController.fetchedObjects;
     //  刷新数据
     [self.tableView reloadData];
+    
+    //  去掉多余cell的显示
+    self.tableView.tableFooterView = [UIView new];
    
 }
 
@@ -73,7 +76,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
     
-    NSLog(@"%lu",(unsigned long)self.contractArr.count);
+   // NSLog(@"%lu",(unsigned long)self.contractArr.count);
     return self.contractArr.count;
 }
 
@@ -90,6 +93,19 @@
     return cell;
 
 }
+//删除方法
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        //  获取数据
+        XMPPUserCoreDataStorageObject *contract = self.contractArr[indexPath.row];
+        
+        [[managerStream shareManager].XMPPRoster removeUser:contract.jid];
+    }
+}
+
+
+
 
 //  当coredata数据变化时候
 -(void)controllerDidChangeContent:(NSFetchedResultsController *)controller{
@@ -110,5 +126,17 @@
 -(void)xmppRoster:(XMPPRoster *)sender didReceivePresenceSubscriptionRequest:(XMPPPresence *)presence{
     //  同意添加
     [[managerStream shareManager].XMPPRoster acceptPresenceSubscriptionRequestFrom:[XMPPJID jidWithUser:@"admin" domain:@"127.0.0.1" resource:nil] andAddToRoster:YES];
+}
+
+// 跳转方法(segue)跳转走这里
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UITableViewCell *)cell{
+    
+    chatViewController *chatVC = segue.destinationViewController;
+    // 参数
+    XMPPUserCoreDataStorageObject *contact = self.contractArr[self.tableView.indexPathForSelectedRow.row];
+    // 数据传递
+    chatVC.jid = contact.jid;
+    
 }
 @end

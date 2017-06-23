@@ -17,6 +17,8 @@
 @property(nonatomic,strong)XMPPAutoPing *XMPPAutoPing;
 //  创建好友列表功能对象
 @property(nonatomic,strong)XMPPRoster *XMPPRoster;
+//  聊天功能对象
+@property(nonatomic,strong)XMPPMessageArchiving *XMPPMessageArchiving;
 
 
 
@@ -24,4 +26,5 @@
 
 //  连接服务器方式
 -(void)logininToservers:(XMPPJID *)XMPPJID passward:(NSString *)passward;
+
 @end
