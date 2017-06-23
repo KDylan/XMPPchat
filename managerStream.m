@@ -20,7 +20,7 @@
 #import "XMPPLogging.h"
 #import "DDTTYLogger.h"
 
-@interface managerStream()<XMPPStreamDelegate>
+@interface managerStream()<XMPPStreamDelegate,XMPPRosterDelegate>
 // 密码
 @property(nonatomic,strong)NSString *passward;
 @end
@@ -81,7 +81,23 @@ static managerStream *share;
     return _XMPPAutoPing;
     
 }
+//  好友列表功能模块
+-(XMPPRoster *)XMPPRoster{
+    if (!_XMPPRoster) {
+        _XMPPRoster = [[XMPPRoster alloc]initWithRosterStorage:[XMPPRosterCoreDataStorage sharedInstance] dispatchQueue:dispatch_queue_create(0, 0)];
+        
+        //  是否自动查找新的好友
+        _XMPPRoster.autoFetchRoster = YES;
+        //  是否自动删除用户缓存
+        _XMPPRoster.autoClearAllUsersAndResources = NO;
+        //  自动处理出席好友请求
+        _XMPPRoster.autoAcceptKnownPresenceSubscriptionRequests = NO;
+        //  设置代理
+        [_XMPPRoster addDelegate:self delegateQueue:dispatch_queue_create(0, 0)];
+    }
+    return _XMPPRoster;
 
+}
 #pragma mark 自定义方法
 //  登录连接服务器(需要设置myjid和密码才可以登录)
 -(void)logininToservers:(XMPPJID *)XMPPJID passward:(NSString *)passward{
@@ -102,6 +118,8 @@ static managerStream *share;
     [self.XMPPReconnect activate:self.XMPPStream];
 //  2、心跳检测激活
     [self.XMPPAutoPing activate:self.XMPPStream];
+//  3、激活好友列表
+    [self.XMPPRoster activate:self.XMPPStream];
 
 }
 

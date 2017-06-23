@@ -16,6 +16,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+  
+    //连接服务器
+      [[managerStream shareManager]logininToservers:[XMPPJID jidWithUser:@"zhangsan" domain:@"127.0.0.1" resource:nil] passward:@"123456"];
+
+    
     //  用户通知设置
     UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge categories:nil];
     //  注册

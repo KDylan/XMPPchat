@@ -15,6 +15,8 @@
 @property(nonatomic,strong)XMPPReconnect *XMPPReconnect;
 //  心跳检测(检测客户端是否在线)
 @property(nonatomic,strong)XMPPAutoPing *XMPPAutoPing;
+//  创建好友列表功能对象
+@property(nonatomic,strong)XMPPRoster *XMPPRoster;
 
 
 

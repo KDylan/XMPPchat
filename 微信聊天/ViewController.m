@@ -16,9 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   //连接服务器
-    [[managerStream shareManager]logininToservers:[XMPPJID jidWithUser:@"zhangsan" domain:@"127.0.0.1" resource:nil] passward:@"123456"];
-    
+//   //连接服务器
+//    [[managerStream shareManager]logininToservers:[XMPPJID jidWithUser:@"zhangsan" domain:@"127.0.0.1" resource:nil] passward:@"123456"];
+//    
     //NSLog(@"here");
 
 }
