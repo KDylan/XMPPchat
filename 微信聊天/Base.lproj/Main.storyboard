@@ -86,7 +86,13 @@
                             <outlet property="delegate" destination="rlK-Nc-hqD" id="Jjh-dd-90I"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="IJn-Nf-TOv"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="IJn-Nf-TOv">
+                        <barButtonItem key="rightBarButtonItem" title="添加" id="59P-fJ-rmy">
+                            <connections>
+                                <action selector="addFriends:" destination="rlK-Nc-hqD" id="NAU-du-YJD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ne4-sq-llB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

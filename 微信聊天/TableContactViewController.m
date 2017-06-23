@@ -98,4 +98,17 @@
     //刷新数据
     [self.tableView reloadData];
 }
+
+//  添加好友
+- (IBAction)addFriends:(id)sender {
+    
+    [[managerStream shareManager].XMPPRoster addUser:[XMPPJID jidWithUser:@"admin" domain:@"127.0.0.1" resource:nil] withNickname:@"加一下"];
+    
+}
+
+//  当有好友验证请求调用这个代理
+-(void)xmppRoster:(XMPPRoster *)sender didReceivePresenceSubscriptionRequest:(XMPPPresence *)presence{
+    //  同意添加
+    [[managerStream shareManager].XMPPRoster acceptPresenceSubscriptionRequestFrom:[XMPPJID jidWithUser:@"admin" domain:@"127.0.0.1" resource:nil] andAddToRoster:YES];
+}
 @end
